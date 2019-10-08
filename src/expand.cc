@@ -158,4 +158,6 @@ void init(v8::Local<v8::Object> exports) {
     node::AtExit(cleanup);
 }
 
-NODE_MODULE(expand, init)
+NODE_MODULE_INIT() {
+    init(exports);
+}
